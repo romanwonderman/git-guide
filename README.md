@@ -1,10 +1,12 @@
 # Very Basic Git Guide
 
-## What is Git
+## Git getting ready
+
+### What is Git
 
 Git - is Version Control System for individual projects and teamwork. It lets you save changes locally and get back to previous versions of your code. 
 
-## Install Git for Windows
+### Install Git for Windows
 
 Follow the [link](https://git-scm.com/download/win) 
 
@@ -22,7 +24,7 @@ git version
 
 If Git is installed, then command will result in version of Git installed
 
-## Git Bash
+### Git Bash
 
 Git Bash is the command line interface that will help you to get on with Git quite quickly
 
@@ -50,7 +52,7 @@ rmdir - deletes empty directories
 
 rm -r - deletes non-empty directories
 
-## Git settings
+### Git settings
 
 Git settings are stored in ```.gitconfig``` file.
 
@@ -81,7 +83,7 @@ user.name=Username
 user.email=username@yandex.ru 
 ```
 
-## Repository initialisation
+### Repository initialisation
 
 To initialize repository, navigate to corresponding directory and run the following command there:
 
@@ -109,7 +111,7 @@ It will show:
 
 * message that says - "to commit something, create it at first"
 
-## Add files to repo
+### Add files to repo
 
 New files in repo are untracked. To start tracking files use the following command:
 
@@ -131,7 +133,7 @@ $ git add .
 
 to track all files in the directory
 
-## Commit
+### Commit
 
 To make a commit run the following command:
 
@@ -141,7 +143,7 @@ $ git commit -m 'My first commit!'
 
 After executing the command, current version of files will be saved in repo with message ```My first commit!```.
 
-## Commit history
+### Commit history
 
 To check previous commits in branch, use the following command:
 
@@ -151,7 +153,7 @@ $ git log
 
 It will show the list of commits in target brach with hash, author, date and message of commits.
 
-## GitHub
+### GitHub
 
 GitHub is the platform to storage IT-projects and to work together on then with use of Git.
 
@@ -161,7 +163,7 @@ Create new repository - navigate to tab **Repositories**, and click on green but
 
 Name your repo and click on button **Create repository**
 
-## SSH key generation
+### SSH key generation
 
 To secure your repo you should use SSH key for push/pull requests
 
@@ -207,7 +209,7 @@ ls -a ~/.ssh
 
 There should be two files - with extension ```.pub``` and without extension. File ```.pub``` - is public, you could share it with web-sites and colleagues. File wihtout extension  - is private. Do not share it with anybody!
 
-## Link SSH key to GitHub account
+### Link SSH key to GitHub account
 
 * Copy public SSH key:
 
@@ -259,7 +261,7 @@ Enter ```yes``` to continue:
 Hi %YOUR_ACCOUNT%! You've successfully authenticated, but GitHub does not provide shell access. 
 ```
 
-## Linking remote repo to local repo
+### Linking remote repo to local repo
 
 Navigate to the page of remote repo, select ```SSH``` type and copy URL.
 
@@ -277,7 +279,7 @@ origin    git@github.com:%ACCOUNT_NAME%/%PROJECT_NAME%.git (fetch)
 origin    git@github.com:%ACCOUNT_NAME%/%PROJECT_NAME%.git (push) 
 ```
 
-## Synchronize remote repo with local repo
+### Synchronize remote repo with local repo
 
 To push changes to remote repo, run the following command:
 
@@ -286,3 +288,19 @@ $ git push -u origin main
 ```
 
 For the first time you need to run ```push``` command with flag ```-u``` and parameters ```origin``` and ```main (master)```. Flag ```-u``` links local and remote branches.
+
+## Commit navigation
+
+### Hash - commit identification
+
+Git hashes commit information by algorithm SHA-1 (**S**ecure **H**ash **A**lgorithm) and gets unique hash for every commit. Usually hash is shot (40 chars in case of SHA-1) line, which contains numbers 0-9 and latin letters A-F.
+
+* If hash is got twice for the same set of input data, result will be the same
+
+* If something has been changed in source data, hash will change as well
+
+Hash is the main commit identifier.
+
+All hashes and the table ```hash -> commit info``` are stored by Git in service files. They are in hidden folder ```.git``` in project repo.
+
+
