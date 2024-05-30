@@ -303,4 +303,27 @@ Hash is the main commit identifier.
 
 All hashes and the table ```hash -> commit info``` are stored by Git in service files. They are in hidden folder ```.git``` in project repo.
 
+### Log
 
+After ```git log``` has been executed, list of commits is shown.
+
+```
+$ git log
+commit 4576fb15ff0315591586bba73ce251a1e074cb84 (HEAD -> master, origin/master)   (1)
+Author: Roman Skripchenko <roman.skripchenko@mcc-soft.de>                         (2)
+Date:   Thu May 30 16:06:48 2024 +0700                                            (3)
+
+    Add info about hash, reaarrange file structure                                (4) 
+```
+
+Let's dig deeper into elements of description:
+
+* line of numbers and letters after word **commit** is commit hash
+
+* **Author** - author's name and their email address
+
+* **Date** - date and time of commit creation
+
+* commit message is at the end.
+
+To get shortened log use ```git log --oneline``` - only several first hash symbols and commit comments will be shown for every commit.
