@@ -20,7 +20,7 @@ Open Git Bash and enter the following command:
 git version
 ```
 
-If Git is installed, then commend will result in version of Git installedd
+If Git is installed, then command will result in version of Git installed
 
 ## Git Bash
 
