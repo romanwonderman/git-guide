@@ -337,3 +337,34 @@ Inside of ```HEAD``` is reference to service file ```refs/heads/master```. If yo
 With every commit made Git refresh ```refs/heads/master```, writing the hash of the last commit into it.
 
 If you need to pass the last commit to come commad, you could use ```HEAD``` instead of hash.
+
+### File statuses in git
+
+There are several statuses, which files potentially could have:
+
+* ```untracked```
+
+Git "see" these files exist, but do not track their changes. ```untracked``` file doesn't have previous versions.
+
+* ```staged```
+
+After ```git add``` has been executed, file gets to the **staging area**, to the list of files, which will be in commit.
+
+* ```tracked```
+
+All files , in which Git track changes (one way or another)
+
+* ```modified```
+
+Means that Git compared file content with the last saved veraions of this file and found diffs.
+
+#### Typical lifecycle of the file in Git
+
+```mermaid
+graph LR;
+  untracked -- "git add" --> staged;
+  staged    -- "git commit"--> tracked/comitted;
+  staged    -- "changes"--> modified;
+  modified  -- "git add"--> staged;
+  tracked/comitted   -- "changes" --> modified;
+```
