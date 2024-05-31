@@ -379,3 +379,6 @@ graph LR;
 
 * ```untracked``` (```Untracked files```)
 
+### Commit messsages
+
+In general, commit message should be short and informative (e.g ```git status --oneline``` shows only 72 first characters of message, it makes sense to squeeze your message in 72 letters)
