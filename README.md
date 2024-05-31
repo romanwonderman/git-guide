@@ -327,3 +327,13 @@ Let's dig deeper into elements of description:
 * commit message is at the end.
 
 To get shortened log use ```git log --oneline``` - only several first hash symbols and commit comments will be shown for every commit.
+
+### HEAD
+
+While executing ```git log``` you could notice line ```(HEAD ---> master)```. File ```HEAD``` is one of service files in foldder ```.git```. It points to the last commit (most recent).
+
+Inside of ```HEAD``` is reference to service file ```refs/heads/master```. If you peak into it, you could see the hash of the last commit.
+
+With every commit made Git refresh ```refs/heads/master```, writing the hash of the last commit into it.
+
+If you need to pass the last commit to come commad, you could use ```HEAD``` instead of hash.
