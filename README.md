@@ -368,3 +368,14 @@ graph LR;
   modified  -- "git add"--> staged;
   tracked/comitted   -- "changes" --> modified;
 ```
+
+### How to read ```git status```
+
+```git status``` shows only the following file states:
+
+* ```staged``` (```Changes to be commited``` in ```git status``` output)
+
+* ```modified``` (```Changed not staged for commit```)
+
+* ```untracked``` (```Untracked files```)
+
